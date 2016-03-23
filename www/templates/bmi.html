@@ -9,8 +9,8 @@
   			<img src="img/man.jpg">
   		</div>
 	</div> -->
-	<!-- <div class="item-divider"></div>
-
+	 <div class="item-divider"></div>
+<!--
 	<div class="item">
 		<div class="item-content">Your Height</div>
   			<div class="item range range-positive">
@@ -18,29 +18,71 @@
     		<input type="range" name="volume" min="1" max="8" value="33">
     		<i class="icon ion-ios-sunny"></i>
   		</div>
-	</div>
-
-	<label class="item ">
-    <div class="item-content">Wave intensity</div>
-    <div class="range range-positive">
-        <i class="icon ion-minus-circled"></i>
-        <input type="range" name="volume" min="1" max="8" value="4">
-        <i class="icon ion-plus-circled"></i>
-    </div>
-</label> -->
-<div class="list">
-
-  <label class="item item-input item-select">
-    <div class="input-label">
-      Lightsaber
-    </div>
-    <select>
-      <option>Blue</option>
-      <option selected>Green</option>
-      <option>Red</option>
-    </select>
-  </label>
-
+	</div> -->
+ <div class="row">
+  <div class="col col-50">
+	   <label class="item ">
+        <div class="item-content">Height in fts</div>
+        <div class="range range-positive">
+          <i class="icon ion-minus-circled"></i>
+          <input type="range" name="volume" min="1" max="8" value="1">
+          <i class="icon ion-plus-circled"></i>
+        </div>
+        <div class="item-content">Feet:</div>
+    </label>
+  </div>
+  <div class="col col-50">
+    <label class="item ">
+        <div class="item-content">Height in inches</div>
+        <div class="range range-positive">
+          <i class="icon ion-minus-circled"></i>
+          <input type="range" name="volume" min="1" max="12" value="1">
+          <i class="icon ion-plus-circled"></i>
+        </div>
+        <div class="item-content">Inches:</div>
+    </label>
+  </div>
 </div>
+<div class="row">
+   <!-- <div class="col col-50">
+       <div class="list">
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Your Height in fts
+          </div>
+          <select>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option selected>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+          </select>
+        </label>
+      </div>
+      <label><h4>Your weight</h4></label>-->
+  </div>
+ <div class="col">
+   <div class="list">
+      <label class="item item-input">
+          <input type="text" placeholder="Enter Your Weght in lbs">
+      </label>
+    </div>
+  </div>
+  <!-- <div class="col">.col</div> -->
+</div>
+<div class="row">
+  <div class="col">
+    <div class="button-bar">
+      <a class="button button-calm">Calculate BMI</a>
+      <a class="button button-assertive">Reset</a>
+    </div>
+  </div>
+</div>
+
+
+
   </ion-content>
 </ion-view>
