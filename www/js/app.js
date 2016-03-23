@@ -40,46 +40,103 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
 
   // Each tab has its own nav history stack:
 
-  .state('tab.dash', {
-    url: '/dash',
+  // .state('tab.dash', {
+  //   url: '/dash',
+  //   views: {
+  //     'tab-dash': {
+  //       templateUrl: 'templates/tab-dash.html',
+  //       controller: 'DashCtrl'
+  //     }
+  //   }
+  // })
+
+  // .state('tab.chats', {
+  //     url: '/chats',
+  //     views: {
+  //       'tab-chats': {
+  //         templateUrl: 'templates/tab-chats.html',
+  //         controller: 'ChatsCtrl'
+  //       }
+  //     }
+  //   })
+  //   .state('tab.chat-detail', {
+  //     url: '/chats/:chatId',
+  //     views: {
+  //       'tab-chats': {
+  //         templateUrl: 'templates/chat-detail.html',
+  //         controller: 'ChatDetailCtrl'
+  //       }
+  //     }
+  //   })
+
+  // .state('tab.account', {
+  //   url: '/account',
+  //   views: {
+  //     'tab-account': {
+  //       templateUrl: 'templates/tab-account.html',
+  //       controller: 'AccountCtrl'
+  //     }
+  //   }
+  // });
+
+.state('tab.bmi', {
+    url: '/bmi',
     views: {
-      'tab-dash': {
-        templateUrl: 'templates/tab-dash.html',
-        controller: 'DashCtrl'
+      'tab-bmi': {
+        templateUrl: 'templates/bmi.html',
+        controller: 'BmiCtrl'
       }
     }
   })
 
-  .state('tab.chats', {
-      url: '/chats',
+  .state('tab.bodyfat', {
+      url: '/bodyfat',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/tab-chats.html',
-          controller: 'ChatsCtrl'
+        'tab-bodyfat': {
+          templateUrl: 'templates/bodyfat.html',
+          controller: 'BodyFatCtrl'
         }
       }
     })
-    .state('tab.chat-detail', {
-      url: '/chats/:chatId',
+    .state('tab.bmr', {
+      url: '/bmr',
       views: {
-        'tab-chats': {
-          templateUrl: 'templates/chat-detail.html',
-          controller: 'ChatDetailCtrl'
+        'tab-bmr': {
+          templateUrl: 'templates/bmr.html',
+          controller: 'BmrCtrl'
         }
       }
     })
 
-  .state('tab.account', {
-    url: '/account',
+  .state('tab.nutrition', {
+    url: '/nutrition',
     views: {
-      'tab-account': {
-        templateUrl: 'templates/tab-account.html',
-        controller: 'AccountCtrl'
+      'tab-nutrition': {
+        templateUrl: 'templates/nutrition.html',
+        controller: 'NutritionCtrl'
       }
     }
-  });
+  })
+    .state('tab.idealweight', {
+    url: '/idealweight',
+    views: {
+      'tab-idealweight': {
+        templateUrl: 'templates/idealweight.html',
+        controller: 'IdealWeightCtrl'
+      }
+    }
+  })
+  .state('tab.heartrate', {
+    url: '/heartrate',
+    views: {
+      'tab-heartrate': {
+        templateUrl: 'templates/heartrate.html',
+        controller: 'HeartRateCtrl'
+      }
+    }
+  })
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/bmi');
 
-});
+})
