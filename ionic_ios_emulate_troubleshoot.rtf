@@ -1,0 +1,94 @@
+{\rtf1\ansi\ansicpg1252\cocoartf1404\cocoasubrtf340
+{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 HelveticaNeue;\f2\fnil\fcharset0 Consolas;
+\f3\fswiss\fcharset0 ArialMT;\f4\fnil\fcharset0 Consolas-Bold;}
+{\colortbl;\red255\green255\blue255;\red38\green38\blue38;\red100\green100\blue100;\red26\green27\blue29;
+\red255\green255\blue255;\red11\green96\blue192;\red234\green234\blue234;\red197\green197\blue197;\red24\green24\blue24;
+\red90\green174\blue29;\red191\green19\blue31;\red54\green105\blue196;\red173\green173\blue173;\red253\green148\blue9;
+}
+\margl1440\margr1440\vieww10800\viewh13560\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 Had issues while renaming the App on iOS simulator \
+had many issues with the file permissions\
+\
+workarounds\
+\pard\pardeftab720\partightenfactor0
+
+\f1\fs28 \cf2 \expnd0\expndtw0\kerning0
+the following worked for me:\
+//remove 
+\b with
+\b0  sudo\
+sudo ionic platform remove ios\
+\
+//add iOS back 
+\b without
+\b0  sudo\
+\pard\pardeftab720\partightenfactor0
+
+\f2\fs24 \cf0 ionic platform add ios
+\f1\fs28 \cf2 \
+//worked for me\
+
+\f2\fs24 ionic emulate ios\
+\
+reference\
+{\field{\*\fldinst{HYPERLINK "http://stackoverflow.com/questions/23095341/how-to-rename-ionic-app-from-hellocordova"}}{\fldrslt http://stackoverflow.com/questions/23095341/how-to-rename-ionic-app-from-hellocordova}}\
+\
+http://stackoverflow.com/questions/25598377/error-eacces-permission-denied-ionic-cordova-ios\
+\
+\
+
+\itap1\trowd \taflags1 \trgaph108\trleft-108 \trcbpat5 \trbrdrt\brdrnil \trbrdrl\brdrnil \trbrdrt\brdrnil \trbrdrr\brdrnil 
+\clvertalt \clshdrawnil \clwWidth920\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr300 \gaph\cellx4320
+\clvertalt \clshdrawnil \clwWidth13200\clftsWidth3 \clbrdrt\brdrnil \clbrdrl\brdrnil \clbrdrb\brdrnil \clbrdrr\brdrnil \clpadl0 \clpadr0 \gaph\cellx8640
+\pard\intbl\itap1\pardeftab720\sl338\qc\partightenfactor0
+
+\f3\fs40 \cf3 \outl0\strokewidth0 \strokec3 2\
+\pard\intbl\itap1\pardeftab720\sl338\qc\partightenfactor0
+
+\fs2 \cf6 \strokec6 down vote\cell 
+\pard\intbl\itap1\pardeftab720\sl380\sa300\partightenfactor0
+
+\fs30 \cf4 \strokec4 If changing the 
+\f2\fs26 \cb7 name
+\f3\fs30 \cb1  is not working for any reason delete entire platform folder and then\
+\pard\intbl\itap1\pardeftab720\sl320\partightenfactor0
+
+\f2\fs26 \cf8 \cb9 \strokec8 cordova platform 
+\f4\b \cf10 \strokec10 add
+\f2\b0 \cf8 \strokec8  ios\
+ionic build ios\cell \lastrow\row
+\pard\pardeftab720\sl390\sa300\partightenfactor0
+
+\f3\fs30 \cf4 \cb5 \strokec4 In the parent directory of the ionic project there is a config.xml\
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f4\b\fs26 \cf11 \cb9 \strokec11 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+\f2\b0 \cf8 \strokec8 \
+\pard\pardeftab720\sl300\partightenfactor0
+
+\f4\b \cf10 \strokec10 <\cf12 \strokec12 widget\cf10 \strokec10  
+\f2\b0 \cf13 \strokec13 id
+\f4\b \cf10 \strokec10 =
+\f2\b0 \cf14 \strokec14 "com.ionicframework.todo497320"
+\f4\b \cf10 \strokec10  
+\f2\b0 \cf13 \strokec13 version
+\f4\b \cf10 \strokec10 =
+\f2\b0 \cf14 \strokec14 "0.0.1"
+\f4\b \cf10 \strokec10  
+\f2\b0 \cf13 \strokec13 xmlns
+\f4\b \cf10 \strokec10 =
+\f2\b0 \cf14 \strokec14 "http://www.w3.org/ns/widgets"
+\f4\b \cf10 \strokec10  
+\f2\b0 \cf13 \strokec13 xmlns:cdv
+\f4\b \cf10 \strokec10 =
+\f2\b0 \cf14 \strokec14 "http://cordova.apache.org/ns/1.0"
+\f4\b \cf10 \strokec10 >
+\f2\b0 \cf8 \strokec8 \
+
+\f4\b \cf10 \strokec10 <\cf12 \strokec12 name\cf10 \strokec10 >
+\f2\b0 \cf8 \strokec8 CHANGE NAME HERE
+\f4\b \cf10 \strokec10 </\cf12 \strokec12 name\cf10 \strokec10 >
+\f2\b0 \cf8 \strokec8 \
+}

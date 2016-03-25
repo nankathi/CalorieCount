@@ -1,88 +1,120 @@
 <ion-view view-title="Body Mass Index">
-   <ion-content class="has-header padding">
-		<h4>Body Mass Index</h4>
-			<p>
-				Knowing BMI can help adult men and women understand their overall health. Use the BMI calculator below to determine your body mass index by inputting your height and weight. The BMI calculator uses the following BMI formula: Weight (lb) / (Height (in))² x 703.
-			</p>
+<ion-content ng-controller="BmiCtrl" class="has-header padding">
+<h4>What is BMI?</h4>
+<p>
+  Knowing BMI can help adult men and women understand their overall health. Use the BMI calculator below to determine your body mass index by inputting your height and weight.
+</p>
 	<!-- <div class="list card">
   		<div class="item item-image">
   			<img src="img/man.jpg">
   		</div>
-	</div> -->
-	 <div class="item-divider"></div>
-<!--
-	<div class="item">
-		<div class="item-content">Your Height</div>
-  			<div class="item range range-positive">
-    		<i class="icon ion-ios-sunny-outline"></i>
-    		<input type="range" name="volume" min="1" max="8" value="33">
-    		<i class="icon ion-ios-sunny"></i>
-  		</div>
-	</div> -->
- <div class="row">
-  <div class="col col-50">
-	   <label class="item ">
-        <div class="item-content">Height in fts</div>
-        <div class="range range-positive">
-          <i class="icon ion-minus-circled"></i>
-          <input type="range" name="volume" min="1" max="8" value="1">
-          <i class="icon ion-plus-circled"></i>
-        </div>
-        <div class="item-content">Feet:</div>
-    </label>
+   </div> -->
+   <form name="bmiform" novalidate>
+
+    <div class="card list">
+          <!-- <label class="item item-input">
+              <span class="input-label"></span>
+              <input type="text" name="weight" placeholder="Enter you Weight" ng-model="input.weight" required />
+            </label> -->
+            <div class="item item-divider">
+              Enter your weight
+            </div>
+
+            <!-- <div class="item item-text-wrap"> -->
+              <label class="item item-input">
+               <input type="text" is-number placeholder="Pounds" name="weight" ng-model="weight.number" >
+               <!-- <span ng-show="!weight.validity">Value is invalid</span> -->
+             </label>
+           <!-- </div> -->
   </div>
-  <div class="col col-50">
-    <label class="item ">
-        <div class="item-content">Height in inches</div>
-        <div class="range range-positive">
-          <i class="icon ion-minus-circled"></i>
-          <input type="range" name="volume" min="1" max="12" value="1">
-          <i class="icon ion-plus-circled"></i>
-        </div>
-        <div class="item-content">Inches:</div>
-    </label>
-  </div>
-</div>
-<div class="row">
-   <!-- <div class="col col-50">
-       <div class="list">
-        <label class="item item-input item-select">
-          <div class="input-label">
-            Your Height in fts
+  <div class="card list">
+           <div class="item item-divider">
+            Enter your Height
           </div>
-          <select>
-            <option>1</option>
-            <option>2</option>
-            <option>3</option>
-            <option>4</option>
-            <option selected>5</option>
-            <option>6</option>
-            <option>7</option>
-            <option>8</option>
-          </select>
-        </label>
-      </div>
-      <label><h4>Your weight</h4></label>-->
-  </div>
- <div class="col">
-   <div class="list">
-      <label class="item item-input">
-          <input type="text" placeholder="Enter Your Weght in lbs">
-      </label>
+          <div class="row">
+            <div class="col col-50">
+             <!-- <div class="card list"> -->
+               <label class="item item-input item-select">
+                <div class="input-label">
+                 Feet
+               </div>
+
+               <select name="feet" ng-model="data.feet">
+                <option value="">Select</option>
+                 <option>1</option>
+                 <option>2</option>
+                 <option>3</option>
+                 <option>4</option>
+                 <option selected>5</option>
+                 <option>6</option>
+                 <option>7</option>
+                 <option>8</option>
+               </select>
+             </label>
+           <!-- </div> -->
+         </div>
+         <div class="col col-50">
+          <!-- <div class="card list"> -->
+           <label class="item item-input item-select ">
+            <div class="input-label">
+             Inches
+           </div>
+
+           <select name="inches" ng-model="data.inches">
+            <option value="">Select</option>
+             <option selected>1</option>
+             <option>2</option>
+             <option>3</option>
+             <option>4</option>
+             <option>5</option>
+             <option>6</option>
+             <option>7</option>
+             <option>8</option>
+             <option>9</option>
+             <option>10</option>
+             <option>11</option>
+             <option>12</option>
+           </select>
+         </label>
+       <!-- </div> -->
+     </div>
+   </div>
+ </div>
+
+ <!-- <div class="padding">
+    <p ng-show="bmiform.weight.$error.required">*Weight is Required</p>
+    <p ng-show="bmiform.weight.$invalid && !bmiform.weight.$pristine">
+     * Weight should be a valid number</p>
+ </div> -->
+ <div class="button-bar">
+      <a class="button button-calm" ng-disabled="bmiform.$invalid" ng-click="submit(weight.number,data.feet,data.inches)">Calculate BMI</a>
+      <a class="button button-assertive">Reset</a>
     </div>
+    <!-- <nvd3 options="vm.options" data="vm.data"></nvd3> -->
+</form>
+<div class="list list-inset">
+
+    <!-- <a class="item item-avatar ion-happy" href="#"></a> -->
+  <div class="item" id="healthy" style="display:none">
+    <a class="button button-block icon-left ion-happy button-energized">HEALTHY</a>
   </div>
-  <!-- <div class="col">.col</div> -->
+  <div class="item" id="underweight" style="display:none">
+    <a class="button button-block icon-left ion-sad-outline button-positive">UNDER WEIGHT</a>
+  </div>
+  <div class="item" id="overweight" style="display:none">
+    <a class="button  button-block icon-right ion-sad button-royal">OVER WEIGHT</a>
+  </div>
 </div>
-<div class="row">
+<!-- <div class="row">
   <div class="col">
     <div class="button-bar">
       <a class="button button-calm">Calculate BMI</a>
       <a class="button button-assertive">Reset</a>
     </div>
   </div>
-</div>
+</div> -->
 
 
 
-  </ion-content>
+</ion-content>
 </ion-view>
