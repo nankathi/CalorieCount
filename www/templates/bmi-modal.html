@@ -1,0 +1,81 @@
+<ion-modal-view ng-if="healthysmiley">
+   <ion-header-bar class="bar bar-assertive">
+      <h1 class="title">Amazing you have Healthy BMI</h1>
+      <button class="button icon icon-left ion-close-round"
+         ng-click="closeModal()"></button>
+   </ion-header-bar>
+
+   <ion-content class="padding">
+         <div class="card">
+            <div class="item">
+                <h2 class="title" align-title="center" >Your BMI is  : {{ bmi }}
+                  <!-- <nvd3 options="options" data="data">{{bmi}}</nvd3> -->
+                 <!--  <highchart id="chart1" config="chartConfig" class="span10"></highchart> -->
+                  <!-- <div class="circle" id="circle-bmi"></div> -->
+                </h2>
+            </div>
+            <div class="item item-body">
+                <!-- <img class="full-image" alt="Happy Smile" src="img/Spongebob.svg"> -->
+            <div id="canvas">
+              <div class="circle" id="circle-bmi" style="margin-left:150px"></div>
+            </div>
+             <p>
+              If your BMI is between 18.5-24.9: Your BMI is considered normal. This healthy weight helps reduce your risk of serious health conditions and means you’re close to your fitness goals.
+            </p>
+            </div>
+         </div>
+   </ion-content>
+</ion-modal-view>
+
+<ion-modal-view ng-if="underweight">
+   <ion-header-bar class="bar bar-assertive">
+      <h1 class="title">Oops! You have Under Weight BMI</h1>
+      <button class="button icon icon-left ion-close-round" ng-click="closeModal()">
+        <span class="icon icon-close"></span>
+      </button>
+   </ion-header-bar>
+
+   <ion-content class="padding">
+        <div class="card">
+         <div class="item">
+                <h2 class="title" align-title="center">Your BMI is  : {{ bmi }} </h2>
+         </div>
+         <div class="item item-body">
+            <p>Under Weight! Dont worry,please follow the tips</p>
+            <!-- <img class="full-image animate-if" src="img/smiley-6.svg" alt="medium Smile"> -->
+             <div id="canvas">
+              <div class="circle" id="circle-bmi" style="margin-left:150px"></div>
+            </div>
+            <p>
+               If your BMI is below 18.5: Your BMI is considered underweight. Keep in mind that an underweight BMI calculation may pose certain health risks. Please consult your healthcare provider for more information about BMI calculations.
+            </p>
+          </div>
+        </div>
+   </ion-content>
+</ion-modal-view>
+
+<ion-modal-view ng-if="overweight">
+   <ion-header-bar class="bar bar-assertive">
+      <h1 class = "title">Opps! you have Over Weight BMI</h1>
+      <button class = "button icon icon-left ion-close-round"
+         ng-click = "closeModal()"></button>
+   </ion-header-bar>
+
+   <ion-content class="padding">
+         <div class="card">
+         <div class="item">
+                <h2 class="title" align-title="center">Your BMI is  : {{ bmi }} </h2>
+         </div>
+         <div class="item item-body">
+         <p>Over Weight!!Dont worry,please follow the tips</p>
+         <!--  <img class="full-image animate-if" src="img/smiley-7.svg" alt="Sad Smile" > -->
+          <div id="canvas">
+              <div class="circle" id="circle-bmi" style="margin-left:150px"></div>
+            </div>
+          <p>
+           If your BMI is above 30: Your BMI is considered overweight. Being overweight may increase your risk of cardiovascular disease. Consider making lifestyle changes through healthy eating and fitness to improve your health. Our Couch to 5K training plan is a great place to start.
+          </p>
+        </div>
+      </div>
+   </ion-content>
+</ion-modal-view>

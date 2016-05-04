@@ -7,6 +7,7 @@
 
     <link href="lib/ionic/css/ionic.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
+    <link href="lib/nvd3/build/nv.d3/css">
 
     <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
     <link href="css/ionic.app.css" rel="stylesheet">
@@ -23,6 +24,12 @@
     <script src="js/controllers.js"></script>
     <script src="js/services.js"></script>
 
+    <!-- d3 for charts -->
+    <script src="lib/d3/d3.js"></script>
+    <script src="lib/nvd3/build/nv.d3.min.js"></script>
+    <script src="lib/angular-nvd3/dist/angular-nvd3.min.js">
+    </script>
+    <!-- Circle js -->
 
   </head>
   <body ng-app="starter">
@@ -43,5 +50,6 @@
      <!--    <button class="button button-icon icon ion-navicon"></button> -->
       </div>
     </ion-nav-view>
+     <script src="lib/circles/circles.min.js"></script>
   </body>
 </html>

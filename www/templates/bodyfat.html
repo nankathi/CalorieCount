@@ -1,8 +1,76 @@
 <ion-view view-title="Body Fat">
 	<ion-content class="has-header padding">
-		<h4>Body Fat</h4>
+		<h4>Calculate your Body Fat</h4>
 			<p>
 				Determine your body fat percentage with our body fat calculator. Use a tape measure to determine your waist, hip and neck circumference. Then input your gender and measurements below to receive a body fat index based on average values. The body fat index is not an indicator of fitness level since the calculation is made with no regard to height or weight
 			</p>
+<!--        <img class="full-image" src="img/Man-1.svg">
+         <img class="full-image" src="img/woman-9.svg"> -->
+			<div class="row">
+
+				<div class="col col-50">
+					<a href="#" ng-click="">
+					   <div class="card">
+						 <div class="item">
+							<h2 class="title">Male</h2>
+						 </div>
+						 <div class="item item-body">
+				    	   <img class="full-image" alt="Male" src="img/Man-1.svg">
+		 			 	 </div>
+	  				   </div>
+					</a>
+    			</div>
+
+				<div class="col col-50">
+					<a href="#" ng-click="">
+						<div class="card">
+							<div class="item">
+								<h2 class="title">Female</h2>
+							</div>
+							<div class="item item-body">
+						   		 <img class="full-image" src="img/woman-9.svg">
+						 	</div>
+						</div>
+					</a>
+				</div>
+			</div>
+      <form name="bodyfatform padding" novalidate>
+			<div class="card list ">
+            	<div class="item item-divider">
+              		 Weight
+            	</div>
+              	<label class="item item-input">
+               		<input type="text" placeholder="Pounds" name="weight" ng-model="wt.number" >
+             	</label>
+             	<div class="item item-divider">
+              		Waist Circumference
+            	</div>
+              	<label class="item item-input">
+               		<input type="text"  placeholder="Inches" name="weight" ng-model="weight.waist" >
+             	</label>
+             	<div class="item item-divider">
+              		Wrist Circumference*
+            	</div>
+              	<label class="item item-input">
+               		<input type="text" placeholder="Inches" name="weight" ng-model="weight.wrist" >
+             	</label>
+             	<div class="item item-divider">
+              	 Hip Circumference
+            	</div>
+              	<label class="item item-input">
+               		<input type="text"  placeholder="Inches" name="weight" ng-model="weight.hip" >
+             	</label>
+             	<div class="item item-divider">
+              	 Forearm Circumference*
+            	</div>
+              	<label class="item item-input">
+               		<input type="text" placeholder="Pounds" name="weight" ng-model="weight.forearm" >
+             	</label>
+  			</div>
+        <div class="button-bar">
+      <a class="button button-calm" ng-disabled="bodyfatform.$invalid" >Calculate Body Fat</a>
+      <a class="button button-assertive" ng-click="resetFields()">Reset</a>
+    </div>
+      </form>
 	</ion-content>
 </ion-view>

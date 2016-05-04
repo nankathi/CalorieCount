@@ -1,7 +1,7 @@
 <ion-view view-title="Body Mass Index">
-<ion-content ng-controller="BmiCtrl" class="has-header padding">
+<ion-content ng-controller="BmiCtrl" class="has-header padding bg">
 <h4>What is BMI?</h4>
-<p>
+<p class="paragraph">
   Knowing BMI can help adult men and women understand their overall health. Use the BMI calculator below to determine your body mass index by inputting your height and weight.
 </p>
 	<!-- <div class="list card">
@@ -22,7 +22,7 @@
 
             <!-- <div class="item item-text-wrap"> -->
               <label class="item item-input">
-               <input type="text" is-number placeholder="Pounds" name="weight" ng-model="weight.number" >
+               <input type="text" placeholder="Pounds" name="weight" ng-model="weight.number" >
                <!-- <span ng-show="!weight.validity">Value is invalid</span> -->
              </label>
            <!-- </div> -->
@@ -40,7 +40,7 @@
                </div>
 
                <select name="feet" ng-model="data.feet">
-                <option value="">Select</option>
+                <!-- <option value="">Select</option> -->
                  <option>1</option>
                  <option>2</option>
                  <option>3</option>
@@ -61,7 +61,8 @@
            </div>
 
            <select name="inches" ng-model="data.inches">
-            <option value="">Select</option>
+            <!-- <option value="">Select</option> -->
+            <option>0</option>
              <option selected>1</option>
              <option>2</option>
              <option>3</option>
@@ -88,23 +89,31 @@
  </div> -->
  <div class="button-bar">
       <a class="button button-calm" ng-disabled="bmiform.$invalid" ng-click="submit(weight.number,data.feet,data.inches)">Calculate BMI</a>
-      <a class="button button-assertive">Reset</a>
+      <a class="button button-assertive" ng-click="resetFields()">Reset</a>
     </div>
     <!-- <nvd3 options="vm.options" data="vm.data"></nvd3> -->
 </form>
-<div class="list list-inset">
 
-    <!-- <a class="item item-avatar ion-happy" href="#"></a> -->
-  <div class="item" id="healthy" style="display:none">
-    <a class="button button-block icon-left ion-happy button-energized">HEALTHY</a>
-  </div>
-  <div class="item" id="underweight" style="display:none">
-    <a class="button button-block icon-left ion-sad-outline button-positive">UNDER WEIGHT</a>
-  </div>
-  <div class="item" id="overweight" style="display:none">
-    <a class="button  button-block icon-right ion-sad button-royal">OVER WEIGHT</a>
-  </div>
-</div>
+      <!-- <div class="modal" ng-if="healthysmiley">
+        <header class="bar bar-header bar-calm">
+          <h1 class="title">I'm A Modal</h1>
+          <div class="button button-clear" ng-click="closeModal()"><span class="icon ion-close"></span></div>
+        </header>
+        <content has-header="true" padding="true">
+          <p>Amazing Your are healthy</p>
+          <img class="full-image animate-if" alt="Happy Smile" src="img/Spongebob.svg">
+          <p>
+            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+            Lorem Ipsum Lorem Ipsum Lorem Ipsum Lorem Ipsum
+          </p>
+        </content>
+      </div> -->
+     <!--  <img class="full-image animate-if" alt="Happy Smile" src="img/Spongebob.svg" ng-if="healthysmiley"> -->
+
+      <!-- <img class="full-image animate-if" src="img/smiley-6.svg" alt="medium Smile" ng-if="underweight"> -->
+
+      <!-- <img class="full-image animate-if" src="img/smiley-7.svg" alt="Sad Smile" ng-if="overweight"> -->
 <!-- <div class="row">
   <div class="col">
     <div class="button-bar">
@@ -113,8 +122,5 @@
     </div>
   </div>
 </div> -->
-
-
-
 </ion-content>
 </ion-view>
